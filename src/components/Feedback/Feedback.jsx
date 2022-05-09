@@ -1,5 +1,3 @@
-// import { render } from '@testing-library/react';
-import s from './Feedback.module.css';
 import React, { Component } from 'react';
 import Notification from './Notification';
 import Statistics from './Statistics';
