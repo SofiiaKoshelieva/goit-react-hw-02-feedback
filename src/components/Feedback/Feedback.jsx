@@ -11,10 +11,12 @@ class Feedback extends Component {
     bad: 0,
   };
   onBtnClick = evt => {
-    const btnText = evt.currentTarget.textContent.toLowerCase();
-    this.setState(prevState => ({
-      [btnText]: prevState[btnText] + 1,
-    }));
+    const btnText = evt.currentTarget.textContent;
+    this.setState(prevState => {
+      return {
+        [btnText]: prevState[btnText] + 1,
+      };
+    });
   };
   countTotalFeedback = () => {
     const total = this.state.good + this.state.neutral + this.state.bad;
@@ -34,7 +36,7 @@ class Feedback extends Component {
       <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={['Good', 'Neutral', 'Bad']}
+            options={['good', 'neutral', 'bad']}
             onLeaveFeedback={this.onBtnClick}
           />
         </Section>
