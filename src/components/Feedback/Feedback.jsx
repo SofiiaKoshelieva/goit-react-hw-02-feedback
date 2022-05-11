@@ -10,11 +10,10 @@ class Feedback extends Component {
     neutral: 0,
     bad: 0,
   };
-  onBtnClick = evt => {
-    const btnText = evt.currentTarget.textContent;
+  onBtnClick = option => {
     this.setState(prevState => {
       return {
-        [btnText]: prevState[btnText] + 1,
+        [option]: prevState[option] + 1,
       };
     });
   };
