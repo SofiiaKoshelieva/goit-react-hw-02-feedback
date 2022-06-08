@@ -1,19 +1,29 @@
 import s from './Feedback.module.css';
-const FeedbackOptions = ({ options, onLeaveFeedback }) => (
+const FeedbackOptions = ({
+  onLeaveFeedbackGood,
+  onLeaveFeedbackNeutral,
+  onLeaveFeedbackBad,
+}) => (
   <ul>
-    {options.map(option => (
-      <li key={option}>
-        <button
-          type="button"
-          className={s.button}
-          onClick={() => {
-            onLeaveFeedback(option);
-          }}
-        >
-          {option}
-        </button>
-      </li>
-    ))}
+    <li>
+      <button type="button" className={s.button} onClick={onLeaveFeedbackGood}>
+        good
+      </button>
+    </li>
+    <li>
+      <button
+        type="button"
+        className={s.button}
+        onClick={onLeaveFeedbackNeutral}
+      >
+        neutral
+      </button>
+    </li>
+    <li>
+      <button type="button" className={s.button} onClick={onLeaveFeedbackBad}>
+        bad
+      </button>
+    </li>
   </ul>
 );
 export default FeedbackOptions;
